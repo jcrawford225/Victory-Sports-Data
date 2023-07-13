@@ -1,0 +1,114 @@
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<title>Victory Sports Data</title>
+
+<head>
+  <link rel="stylesheet" th:href="@{/css/sportsdata.css}">
+
+</head>
+
+<body class="body_signup">
+
+<div class="div_signup">
+  <form th:action="@{/signup-process}" th:object="${user}"method="post">
+    <div class="tableDiv">
+      <table align="center">
+        <tbody>
+        <tr>
+          <th colspan="2"><Sign Up</h1></th>
+        </tr>
+        <tr>
+
+          <td>
+            <input type="text" class="text" th:field="*{firstName}" placeholder="First Name">
+            <br> <span class="error" th:if="${fields.hasErrors('firstName')}"
+                       th:errors="*{firstName}"><td>
+                </td>
+
+        </tr>
+        <tr>
+          <td>
+            <input type="text" class="text" th:field="*{lastName"}>
+            br><span class="error" th:if="${#fields.hasErrors('lastName')}"
+                     th:errors="*{lastName}"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="text" class="text" th:field="*{email}" placeholder="email">
+            <br><span class="error" th:if="${#fields.hasErrors('email')}"
+                      th:errors="*{email}"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="password" class="text" th:field="*{password}" placeholder=password">
+            <br><span class="error" th:if="${#fields.hasErrors('password')}"
+                      th:errors="*{password}"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="password" class="text" th:field="*{matchingPassword}" placeholder="Repeat Password"/>
+            <br><span class="error" th:if="${#fields.hasErrors('matchingPassword')}"
+                      th:errors="*{matchingPassword}"></span>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" class="_button" value="Save"></td>
+        </tr>
+        <tr><td colspan="2">
+          <a th:href="/login">go back to login</a>
+        </td></tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
